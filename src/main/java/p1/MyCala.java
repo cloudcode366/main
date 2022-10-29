@@ -1,5 +1,7 @@
 package p1;
 
+import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 
 public class MyCala implements ICala {
@@ -52,34 +54,10 @@ public class MyCala implements ICala {
 
     }
 
+   
     @Override
     public void f3(List<Cala> p0) {
-        int n = p0.size();
-            for (int i = 0; i < n - 1; i++) {
-                // System.out.print(0);
-                Cala lst1 = p0.get(i);
-                String str1 = lst1.getOwner();
-
-                for (int j = i+1; j < n; j++) {
-                    lst1 = p0.get(i);
-                    str1 = lst1.getOwner();
-                    // System.out.print(1);
-                    Cala lst2 = p0.get(j);
-                    String str2 = lst2.getOwner();
-
-                    if (str1.charAt(1) > str2.charAt(1)) {
-                        Cala tam = p0.get(i);
-                        p0.remove(i);
-                        
-                        p0.add(i, p0.get(j-1));
-                        p0.remove(j);
-                        
-                        p0.add(j, tam);
-                        
-                    }
-                }
-
-            }
+        Collections.sort(p0);
 
     }
 }
